@@ -10,6 +10,10 @@ from numba import cuda
 import numba
 import random
 
+from numba import config
+config.CUDA_ENABLE_PYNVJITLINK = 1
+config.CUDA_LOW_OCCUPANCY_WARNINGS = 0
+
 @dataclass
 class ScalarHistory:
     last_fn: str
